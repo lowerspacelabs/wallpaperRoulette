@@ -1,4 +1,4 @@
-package com.lowerspacelabs.wallpaperRoulette;
+package com.lowerspacelabs.wallpaper;
 
 import android.app.Activity;
 import android.os.Bundle;

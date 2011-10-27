@@ -1,0 +1,58 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+HelloWallpaper	src/com/lowerspacelabs/wallpaper/HelloWallpaper.java	/^public class HelloWallpaper extends Activity {$/;"	c
+LinearLayout01	gen/com/lowerspacelabs/wallpaper/R.java	/^        public static final int LinearLayout01=0x7f060000;$/;"	f	class:R.id
+R	gen/com/lowerspacelabs/wallpaper/R.java	/^public final class R {$/;"	c
+RouletteEngine	src/com/lowerspacelabs/wallpaper/WallpaperRouletteService.java	/^        RouletteEngine(Context c) {$/;"	m	class:WallpaperRouletteService.RouletteEngine
+RouletteEngine	src/com/lowerspacelabs/wallpaper/WallpaperRouletteService.java	/^    public class RouletteEngine extends Engine {$/;"	c	class:WallpaperRouletteService
+WallTest	tests/src/com/lowerspacelabs/wallpaper/test/WallTest.java	/^   public WallTest() { super(WallpaperRouletteService.class); }$/;"	m	class:WallTest
+WallTest	tests/src/com/lowerspacelabs/wallpaper/test/WallTest.java	/^public class WallTest extends ServiceTestCase<WallpaperRouletteService> { $/;"	c
+WallpaperRouletteService	src/com/lowerspacelabs/wallpaper/WallpaperRouletteService.java	/^public class WallpaperRouletteService extends WallpaperService {$/;"	c
+app_name	gen/com/lowerspacelabs/wallpaper/R.java	/^        public static final int app_name=0x7f050001;$/;"	f	class:R.string
+attr	gen/com/lowerspacelabs/wallpaper/R.java	/^    public static final class attr {$/;"	c	class:R
+com.lowerspacelabs.wallpaper	gen/com/lowerspacelabs/wallpaper/R.java	/^package com.lowerspacelabs.wallpaper;$/;"	p
+com.lowerspacelabs.wallpaper	src/com/lowerspacelabs/wallpaper/HelloWallpaper.java	/^package com.lowerspacelabs.wallpaper;$/;"	p
+com.lowerspacelabs.wallpaper	src/com/lowerspacelabs/wallpaper/WallpaperRouletteService.java	/^package com.lowerspacelabs.wallpaper;$/;"	p
+com.lowerspacelabs.wallpaper.WallpaperRoulette.test	tests/src/com/lowerspacelabs/wallpaper/test/WallTest.java	/^package com.lowerspacelabs.wallpaper.WallpaperRoulette.test;$/;"	p
+ctx	src/com/lowerspacelabs/wallpaper/WallpaperRouletteService.java	/^        private Context ctx;$/;"	f	class:WallpaperRouletteService.RouletteEngine	file:
+currentImageUrl	src/com/lowerspacelabs/wallpaper/WallpaperRouletteService.java	/^    private static URL currentImageUrl = null;$/;"	f	class:WallpaperRouletteService	file:
+currentUrl	src/com/lowerspacelabs/wallpaper/WallpaperRouletteService.java	/^        public URL currentUrl() { return currentImageUrl; }$/;"	m	class:WallpaperRouletteService.RouletteEngine
+drawAsWallpaper	src/com/lowerspacelabs/wallpaper/WallpaperRouletteService.java	/^        void drawAsWallpaper(URL imageUrl) {$/;"	m	class:WallpaperRouletteService.RouletteEngine
+drawable	gen/com/lowerspacelabs/wallpaper/R.java	/^    public static final class drawable {$/;"	c	class:R
+icon	gen/com/lowerspacelabs/wallpaper/R.java	/^        public static final int icon=0x7f020000;$/;"	f	class:R.drawable
+id	gen/com/lowerspacelabs/wallpaper/R.java	/^    public static final class id {$/;"	c	class:R
+imageList	src/com/lowerspacelabs/wallpaper/WallpaperRouletteService.java	/^        private List<URL> imageList;$/;"	f	class:WallpaperRouletteService.RouletteEngine	file:
+layout	gen/com/lowerspacelabs/wallpaper/R.java	/^    public static final class layout {$/;"	c	class:R
+mStartTime	src/com/lowerspacelabs/wallpaper/WallpaperRouletteService.java	/^        private long mStartTime;$/;"	f	class:WallpaperRouletteService.RouletteEngine	file:
+mVisible	src/com/lowerspacelabs/wallpaper/WallpaperRouletteService.java	/^        private boolean mVisible;$/;"	f	class:WallpaperRouletteService.RouletteEngine	file:
+main	gen/com/lowerspacelabs/wallpaper/R.java	/^        public static final int main=0x7f030000;$/;"	f	class:R.layout
+mainEngine	tests/src/com/lowerspacelabs/wallpaper/test/WallTest.java	/^   private RouletteEngine mainEngine;$/;"	f	class:WallTest	file:
+onCreate	src/com/lowerspacelabs/wallpaper/HelloWallpaper.java	/^    public void onCreate(Bundle savedInstanceState) {$/;"	m	class:HelloWallpaper
+onCreate	src/com/lowerspacelabs/wallpaper/WallpaperRouletteService.java	/^        public void onCreate(SurfaceHolder surfaceHolder) {$/;"	m	class:WallpaperRouletteService.RouletteEngine
+onCreate	src/com/lowerspacelabs/wallpaper/WallpaperRouletteService.java	/^    public void onCreate() {$/;"	m	class:WallpaperRouletteService
+onCreateEngine	src/com/lowerspacelabs/wallpaper/WallpaperRouletteService.java	/^    public Engine onCreateEngine() { return new RouletteEngine(this); }$/;"	m	class:WallpaperRouletteService
+onDestroy	src/com/lowerspacelabs/wallpaper/WallpaperRouletteService.java	/^        public void onDestroy() {$/;"	m	class:WallpaperRouletteService.RouletteEngine
+onDestroy	src/com/lowerspacelabs/wallpaper/WallpaperRouletteService.java	/^    public void onDestroy() {$/;"	m	class:WallpaperRouletteService
+onOffsetsChanged	src/com/lowerspacelabs/wallpaper/WallpaperRouletteService.java	/^        public void onOffsetsChanged(float xOffset, float yOffset,$/;"	m	class:WallpaperRouletteService.RouletteEngine
+onSurfaceChanged	src/com/lowerspacelabs/wallpaper/WallpaperRouletteService.java	/^        public void onSurfaceChanged(SurfaceHolder holder, $/;"	m	class:WallpaperRouletteService.RouletteEngine
+onSurfaceCreated	src/com/lowerspacelabs/wallpaper/WallpaperRouletteService.java	/^        public void onSurfaceCreated(SurfaceHolder holder) {$/;"	m	class:WallpaperRouletteService.RouletteEngine
+onSurfaceDestroyed	src/com/lowerspacelabs/wallpaper/WallpaperRouletteService.java	/^        public void onSurfaceDestroyed(SurfaceHolder holder) {$/;"	m	class:WallpaperRouletteService.RouletteEngine
+onTouchEvent	src/com/lowerspacelabs/wallpaper/WallpaperRouletteService.java	/^        public void onTouchEvent(MotionEvent event) {$/;"	m	class:WallpaperRouletteService.RouletteEngine
+onVisibilityChanged	src/com/lowerspacelabs/wallpaper/WallpaperRouletteService.java	/^        public void onVisibilityChanged(boolean visible) {$/;"	m	class:WallpaperRouletteService.RouletteEngine
+p	src/com/lowerspacelabs/wallpaper/WallpaperRouletteService.java	/^        private Paint p = new Paint();$/;"	f	class:WallpaperRouletteService.RouletteEngine	file:
+previewEngine	tests/src/com/lowerspacelabs/wallpaper/test/WallTest.java	/^   private RouletteEngine previewEngine;$/;"	f	class:WallTest	file:
+searchButton	gen/com/lowerspacelabs/wallpaper/R.java	/^        public static final int searchButton=0x7f060002;$/;"	f	class:R.id
+searchButtonText	gen/com/lowerspacelabs/wallpaper/R.java	/^        public static final int searchButtonText=0x7f050000;$/;"	f	class:R.string
+searchEdit	gen/com/lowerspacelabs/wallpaper/R.java	/^        public static final int searchEdit=0x7f060001;$/;"	f	class:R.id
+searchForImagesOf	src/com/lowerspacelabs/wallpaper/WallpaperRouletteService.java	/^        public List<URL> searchForImagesOf(String topic) {$/;"	m	class:WallpaperRouletteService.RouletteEngine
+selectRandomWallpaper	src/com/lowerspacelabs/wallpaper/WallpaperRouletteService.java	/^        public URL selectRandomWallpaper() {$/;"	m	class:WallpaperRouletteService.RouletteEngine
+setUp	tests/src/com/lowerspacelabs/wallpaper/test/WallTest.java	/^   protected void setUp() throws Exception { super.setUp();$/;"	m	class:WallTest
+string	gen/com/lowerspacelabs/wallpaper/R.java	/^    public static final class string {$/;"	c	class:R
+testPaperPersistence	tests/src/com/lowerspacelabs/wallpaper/test/WallTest.java	/^   public void testPaperPersistence() {$/;"	m	class:WallTest
+testWallpaper	tests/src/com/lowerspacelabs/wallpaper/test/WallTest.java	/^   public void testWallpaper() {$/;"	m	class:WallTest
+wall	gen/com/lowerspacelabs/wallpaper/R.java	/^        public static final int wall=0x7f040000;$/;"	f	class:R.xml
+xml	gen/com/lowerspacelabs/wallpaper/R.java	/^    public static final class xml {$/;"	c	class:R

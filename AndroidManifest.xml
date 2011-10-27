@@ -1,18 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-      package="com.lowerspacelabs.wallpaperRoulette"
-      android:versionCode="1"
-      android:versionName="1.0">
-    <application android:icon="@drawable/icon" android:label="@string/app_name">
-        <activity android:name=".HelloWallpaper"
-                  android:label="@string/app_name">
+<manifest 
+   xmlns:android="http://schemas.android.com/apk/res/android"
+   package="com.lowerspacelabs.wallpaper" >
+    <uses-sdk android:minSdkVersion="7" />
+    <uses-feature android:name="android.software.live_wallpaper" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.SET_WALLPAPER" />
+    <application android:icon="@drawable/icon" 
+                 android:label="@string/app_name">
+        <service android:name=".WallpaperRouletteService"
+                 android:label="@string/app_name"
+                 android:permission="android.permission.BIND_WALLPAPER">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
+               <action android:name="android.service.wallpaper.WallpaperService" />
             </intent-filter>
-        </activity>
-
+            <meta-data android:name="android.service.wallpaper" android:resource="@xml/wall" />
+        </service>
     </application>
-    <uses-sdk android:minSdkVersion="5" />
-
 </manifest> 
