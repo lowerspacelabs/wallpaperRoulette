@@ -2,7 +2,6 @@ package com.lowerspacelabs.wallpaper.WallpaperRoulette.test;
 
 import junit.framework.Assert;
 import android.test.ServiceTestCase;
-import android.util.Log;
 
 import java.net.URL;
 import java.util.List;
@@ -26,13 +25,14 @@ public class WallTest extends ServiceTestCase<WallpaperRouletteService> {
 
    public void testWallpaper() {
       Assert.assertNotNull(mainEngine);
+      Assert.assertNotNull(previewEngine);
+      Assert.assertEquals(mainEngine.currentUrl(), previewEngine.currentUrl());
+   }
+
+   public void testPaperSearch() {
       List<URL> testList = mainEngine.searchForImagesOf("lightning");
       Assert.assertFalse(testList.size() == 0);
       URL randomImageUrl = mainEngine.selectRandomWallpaper();
       Assert.assertTrue(testList.contains(randomImageUrl));
-   }
-
-   public void testPaperPersistence() {
-      Assert.assertEquals(mainEngine.currentUrl(), previewEngine.currentUrl());
    }
 }

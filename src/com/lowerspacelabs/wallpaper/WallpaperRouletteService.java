@@ -21,6 +21,7 @@ import java.util.*;
 public class WallpaperRouletteService extends WallpaperService {
 
    private static URL currentImageUrl = null;
+   private static Bitmap currentImage = null;
    private static List<URL> imageList;
 
     @Override
@@ -49,19 +50,26 @@ public class WallpaperRouletteService extends WallpaperService {
                imageList = searchForImagesOf("lightning");
                currentImageUrl = selectRandomWallpaper();
             }
-            drawAsWallpaper(currentImageUrl);
-            setTouchEventsEnabled(true);
+            drawWallpaper(currentImage);
         }
 
         public URL currentUrl() { return currentImageUrl; }
 
         public URL selectRandomWallpaper() {
-            Log.v("Roulette", "Setting random wallpaper.");
             int randomIndex = new Random().nextInt(imageList.size());
             URL randomUrl = imageList.get(randomIndex);
             Toast.makeText(ctx, 
-                           "Selecting random wallpaper: " + randomUrl, 
-                           Toast.LENGTH_SHORT).show();
+                           "Selected random wallpaper: " + randomUrl, 
+                           Toast.LENGTH_LONG).show();
+            try {
+               InputStream bitmapStream = randomUrl.openStream();
+               currentImage = BitmapFactory.decodeStream(bitmapStream);
+               bitmapStream.close();
+            } catch(Exception e) {
+               Toast.makeText(ctx, 
+                                "Exception: " + e, 
+                                Toast.LENGTH_LONG).show();
+            }
             return randomUrl;
         }
 
@@ -69,22 +77,22 @@ public class WallpaperRouletteService extends WallpaperService {
            ArrayList<URL> pList = new ArrayList<URL>();
            try {
               URL sUrl = new URL("http://www.google.com/images?q=" + topic);
-              String regexToMatch = "imgurl=(http.*?jpg)";
+              String regexToMatch = "imgurl=(http.*?(jpg|jpeg|png))";
               InputStream sUrlStream = sUrl.openStream();
               Scanner imageScanner = new Scanner(sUrlStream);
               while(imageScanner.hasNext()) {
                  String token = imageScanner.findInLine(regexToMatch); 
                  if(token != null) { 
                     token = imageScanner.match().group(1);
-                    Log.v("Roulette", "Found: " + token); 
                     pList.add(new URL(token));
                  }
                  imageScanner.next();
               }
-              Log.v("Roulette", "No more matches.");
               sUrlStream.close();
            } catch(Exception e) {
-               Toast.makeText(ctx, "Exception: " + e, Toast.LENGTH_LONG).show();
+               Toast.makeText(ctx, 
+                              "Exception: " + e, 
+                              Toast.LENGTH_LONG).show();
            }
            return pList;
         }
@@ -132,28 +140,19 @@ public class WallpaperRouletteService extends WallpaperService {
 
         @Override
         public void onTouchEvent(MotionEvent event) {
-            Log.v("Roulette", "Touch event: " + event);
+           if(event.getAction() == MotionEvent.ACTION_UP) {
             currentImageUrl = selectRandomWallpaper();
-            drawAsWallpaper(currentImageUrl);
-            super.onTouchEvent(event);
+            drawWallpaper(currentImage);
+           }
+           super.onTouchEvent(event);
         }
 
-        void drawAsWallpaper(URL imageUrl) {
-            final SurfaceHolder holder = getSurfaceHolder();
-            long now = SystemClock.elapsedRealtime();
-            Log.v("Roulette", "In drawAsWallpaper with " + imageUrl);
+        void drawWallpaper(Bitmap wallImage) {
             Canvas c = null;
+            final SurfaceHolder holder = getSurfaceHolder();
             try {
-               InputStream bitmapStream = imageUrl.openStream();
-               Bitmap image = BitmapFactory.decodeStream(bitmapStream);
-               bitmapStream.close();
                c = holder.lockCanvas();
-               if (c != null) { c.drawBitmap(image, 0, 0, null); }
-            } catch(Exception e) {
-               Toast etoast = Toast.makeText(ctx, 
-                                             "Exception: " + e, 
-                                             Toast.LENGTH_LONG);
-               etoast.show();
+               if (c != null) { c.drawBitmap(wallImage, 0, 0, null); }
             } finally {
                 if (c != null) holder.unlockCanvasAndPost(c);
             }
